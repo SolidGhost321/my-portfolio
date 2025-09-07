@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - Богдан</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="nav-link active">Главная</a>
+            <a href="about.html" class="nav-link">Обо мне</a>
+            <a href="blog.html" class="nav-link">Блог</a>
+            <a href="contact.html" class="nav-link">Контакты</a>
+            <a href="services.html" class="nav-link">Услуги</a>
+        </nav>
+        <button id="themeToggle" class="theme-toggle-btn">
+            <span class="theme-icon">🌙</span>
+        </button>
+    </header>
+
+    <main class="main-content">
+        <section id="hero-section" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title fade-up delay-1">Привет, я Богдан</h1>
+                    <p class="hero-subtitle fade-up delay-2">Я начинающий веб-разработчик, который стремится создавать красивые и функциональные сайты.</p>
+                    <a href="services.html" class="btn btn-primary fade-up delay-3">Мои услуги</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="services-section">
+            <div class="container">
+                <h2 class="section-heading fade-up">Обо мне</h2>
+                <div class="about-content-flex fade-up delay-1">
+                    <img src="images/my-photo.jpg" alt="Моё фото" class="my-photo-circle">
+                    <div class="about-text-container">
+                        <p class="about-text">
+                            Я увлекся программированием в 2024 году и активно изучаю HTML, CSS и JavaScript. Мне нравится видеть, как из простого кода рождается полноценный сайт, и я постоянно ищу новые задачи.
+                        </p>
+                        <a href="about.html" class="read-more-btn">Узнать больше →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="todo-list" class="todo-section">
+            <div class="container">
+                <h2 class="section-heading fade-up">ToDo-лист</h2>
+                <div class="todo-container fade-up delay-1">
+                    <div class="todo-input">
+                        <input type="text" id="taskInput" placeholder="Добавить новую задачу...">
+                        <button id="addTaskBtn" class="btn btn-primary">Добавить</button>
+                    </div>
+                    <ul id="taskList" class="todo-list">
+                        </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="testimonials-section">
+            <div class="container">
+                <h2 class="section-heading fade-up">Из блога</h2>
+                <div class="testimonials-slider">
+                    <div class="testimonial-card fade-up delay-1">
+                        <p class="quote">“Как я учусь кодить”</p>
+                        <div class="author-info">
+                            <div>
+                                <p class="author-name">Мой первый пост</p>
+                                <a href="blog.html" class="read-more-btn">Читать →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card fade-up delay-2">
+                        <p class="quote">“Первый проект: взлёты и падения”</p>
+                        <div class="author-info">
+                            <div>
+                                <p class="author-name">Мой второй пост</p>
+                                <a href="blog.html" class="read-more-btn">Читать →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card fade-up delay-3">
+                        <p class="quote">“Мои цели в IT-сфере”</p>
+                        <div class="author-info">
+                            <div>
+                                <p class="author-name">Мой третий пост</p>
+                                <a href="blog.html" class="read-more-btn">Читать →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="fade-up">&copy; 2025 Богдан. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" class="scroll-to-top-btn">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

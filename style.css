@@ -1,0 +1,774 @@
+/* Переменные для цветовых схем (восстановлены под старый дизайн) */
+:root {
+    --bg-color: #f4f7f9; /* Светлый фон */
+    --bg-light: #ffffff; /* Более светлый фон для карточек и контраста */
+    --text-color: #333333; /* Темный текст */
+    --primary-color: #007bff; /* Синий для акцентов */
+    --secondary-color: #dc3545; /* Красный для кнопок удаления */
+    --card-bg: #ffffff; /* Фон карточек */
+    --header-bg: rgba(255, 255, 255, 0.95); /* Фон шапки */
+    --border-color: #e0e0e0; /* Светлая граница */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Легкая тень */
+    --button-text-color: #ffffff;
+}
+
+body.dark-theme {
+    --bg-color: #1a1a2e; /* Темный фон */
+    --bg-light: #1f4068; /* Чуть светлее для контраста */
+    --text-color: #e0e0e0; /* Светлый текст */
+    --primary-color: #16213e; /* Темно-синий для акцентов */
+    --secondary-color: #e94560; /* Яркий красный */
+    --card-bg: #0f3460; /* Фон карточек в темной теме */
+    --header-bg: rgba(26, 26, 46, 0.95); /* Фон шапки в темной теме */
+    --border-color: #2e3b4e; /* Темная граница */
+    --shadow-color: rgba(0, 0, 0, 0.4); /* Более выраженная тень */
+    --button-text-color: #e0e0e0;
+}
+
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    background: var(--header-bg);
+    color: var(--text-color);
+    padding: 1rem 0;
+    border-bottom: #e0e0e0 3px solid;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex; /* Для размещения кнопки темы */
+    justify-content: center; /* Для размещения навигации по центру */
+    align-items: center;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.header .nav {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header .nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.header .nav-link:hover, .header .nav-link.active {
+    color: var(--primary-color);
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+    color: var(--text-color); /* чтобы иконка тоже меняла цвет */
+}
+
+.theme-toggle-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 400px;
+    background: var(--bg-color);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease;
+}
+
+.hero-title {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.hero-subtitle {
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+/* Page Hero (для внутренних страниц) */
+.page-hero {
+    min-height: 200px;
+    background: var(--bg-light);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.5s ease;
+}
+
+.page-title {
+    font-size: 2.5em;
+    color: var(--text-color);
+}
+
+/* Sections */
+.section-heading {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.services-section, .portfolio-section, .testimonials-section, .contact-section,
+.about-section-content, .blog-section-content, .todo-section, .calculator-section {
+    padding: 80px 0;
+    background-color: var(--bg-color);
+    transition: background-color 0.5s ease;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.service-card {
+    background: var(--card-bg);
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px var(--shadow-color);
+}
+
+.service-card .icon {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.service-card p {
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px var(--shadow-color);
+}
+
+.portfolio-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+.portfolio-overlay h3 {
+    margin-bottom: 5px;
+}
+
+.portfolio-overlay p {
+    font-size: 0.9em;
+}
+
+/* Testimonials Slider */
+.testimonials-slider {
+    display: flex;
+    overflow-x: auto; /* Позволяет прокручивать, если много отзывов */
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding-bottom: 20px; /* Чтобы скроллбар не перекрывал контент */
+}
+
+.testimonial-card {
+    flex: 0 0 350px; /* Фиксированная ширина карточки */
+    scroll-snap-align: start;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: background-color 0.5s ease;
+    min-width: 300px; /* Минимальная ширина для адаптивности */
+}
+
+.testimonial-card .quote {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-name {
+    font-weight: bold;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.author-role {
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin: 0;
+}
+
+
+/* Footer */
+.footer {
+    background: var(--header-bg);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px 0;
+    border-top: #e0e0e0 1px solid;
+    box-shadow: 0 -2px 5px var(--shadow-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.scroll-to-top-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* About Section */
+.about-content-flex {
+    display: flex;
+    align-items: flex-start; /* Изменено на flex-start для лучшего выравнивания */
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.my-photo-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    flex-shrink: 0;
+}
+
+.about-text-container {
+    flex-grow: 1;
+    max-width: 700px;
+    color: var(--text-color);
+}
+
+.about-text {
+    margin-bottom: 20px;
+}
+
+.skills-section {
+    padding: 60px 0;
+    background-color: var(--bg-light);
+    text-align: center;
+    transition: background-color 0.5s ease;
+}
+
+.skills-list-modern {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.skills-list-modern li {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+/* Blog Page */
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.blog-card-modern {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+}
+
+.blog-card-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px var(--shadow-color);
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-content h3 {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.blog-content p {
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+/* Contact Section */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    align-items: start;
+}
+
+.contact-info h3, .contact-form-container h3 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.social-links-modern {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--primary-color);
+}
+
+.social-link img {
+    width: 24px;
+    height: 24px;
+    filter: invert(var(--theme-invert-filter, 0)); /* Для иконок SVG */
+    transition: filter 0.5s ease;
+}
+
+body.dark-theme .social-link img {
+    filter: invert(var(--theme-invert-filter, 1));
+}
+
+
+.contact-form {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: background-color 0.5s ease;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: var(--bg-light); /* Легкий фон для полей ввода */
+    color: var(--text-color);
+    transition: border-color 0.3s ease, background-color 0.5s ease, color 0.5s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Calculator Section Styles */
+.calculator-section {
+    background-color: var(--bg-light); /* Контрастный фон */
+}
+
+.calculator-container {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Выравнивание сверху */
+    gap: 40px;
+    flex-wrap: wrap; /* Для адаптивности */
+}
+
+.calculator-options {
+    flex: 1;
+    min-width: 280px; /* Минимальная ширина, чтобы не сжимался сильно */
+}
+
+.option-block {
+    margin-bottom: 25px;
+}
+
+.option-label {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+#pages {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+#pages::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#pages::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checkbox-group label {
+    font-size: 1em;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.calculator-result {
+    flex: 1;
+    min-width: 280px;
+    background-color: var(--bg-light); /* Контрастный фон */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 5px var(--shadow-color);
+    text-align: right;
+}
+
+.calculator-result h3 {
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.price-output {
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.details-output {
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.8;
+    min-height: 40px;
+}
+
+/* ToDo List Section Styles */
+.todo-section {
+    background-color: var(--bg-color); /* Основной фон */
+}
+
+.todo-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--card-bg); /* Фон карточки */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: background-color 0.5s ease;
+}
+
+.todo-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.todo-input input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: var(--bg-light); /* Фон для инпута */
+    color: var(--text-color);
+    transition: border-color 0.3s ease, background-color 0.5s ease, color 0.5s ease;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    background-color: var(--bg-light); /* Фон элемента списка */
+    border-radius: 5px;
+    margin-bottom: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.todo-item.completed {
+    background-color: rgba(0, 123, 255, 0.1); /* Легкий синий фон для выполненных */
+    text-decoration: line-through;
+    opacity: 0.7;
+    color: var(--text-color);
+}
+
+.todo-item .task-text {
+    flex: 1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.todo-item-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: transform 0.2s ease;
+}
+
+.todo-item-actions button:hover {
+    transform: scale(1.1);
+}
+
+.delete-btn {
+    color: var(--secondary-color); /* Красный цвет */
+}
+
+/* Анимация появления снизу (fade-up) */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s forwards;
+}
+
+.fade-up.delay-1 { animation-delay: 0.3s; }
+.fade-up.delay-2 { animation-delay: 0.6s; }
+.fade-up.delay-3 { animation-delay: 0.9s; }
+.fade-up.delay-4 { animation-delay: 1.2s; }
+.fade-up.delay-5 { animation-delay: 1.5s; }
+.fade-up.delay-6 { animation-delay: 1.8s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .header .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-title {
+        font-size: 2.5em;
+    }
+
+    .section-heading {
+        font-size: 2em;
+    }
+
+    .about-content-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .my-photo-circle {
+        margin-bottom: 20px;
+    }
+
+    .about-text-container {
+        text-align: center;
+    }
+
+    .calculator-container {
+        flex-direction: column;
+    }
+
+    .calculator-options, .calculator-result {
+        width: 100%;
+        text-align: center;
+    }
+
+    .theme-toggle-btn {
+        position: static; /* Убираем абсолютное позиционирование */
+        transform: none; /* Убираем трансформацию */
+        margin-top: 10px; /* Добавляем отступ */
+    }
+}

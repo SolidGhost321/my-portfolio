@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог - Богдан</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="about.html" class="nav-link">Обо мне</a>
+            <a href="blog.html" class="nav-link active">Блог</a>
+            <a href="contact.html" class="nav-link">Контакты</a>
+            <a href="services.html" class="nav-link">Услуги</a>
+        </nav>
+        <button id="themeToggle" class="theme-toggle-btn">
+            <span class="theme-icon">🌙</span>
+        </button>
+    </header>
+
+    <main class="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title fade-up">Мой блог</h1>
+            </div>
+        </section>
+
+        <section class="blog-section-content">
+            <div class="container">
+                <div class="blog-posts-grid">
+                    <div class="blog-card-modern fade-up delay-1">
+                        <img src="images/blog-post1.jpg" alt="Процесс обучения" class="blog-image">
+                        <div class="blog-content">
+                            <h3>Как я учусь кодить</h3>
+                            <p>В этой статье я расскажу о своём пути в мир программирования. Я поделюсь полезными ресурсами и тем, что мотивирует меня двигаться вперёд.</p>
+                            <a href="#" class="read-more-btn">Читать далее →</a>
+                        </div>
+                    </div>
+                    <div class="blog-card-modern fade-up delay-2">
+                        <img src="images/blog-post2.jpg" alt="Мой первый проект" class="blog-image">
+                        <div class="blog-content">
+                            <h3>Первый проект: взлёты и падения</h3>
+                            <p>Описание моего первого самостоятельного проекта. С какими трудностями я столкнулся, какие ошибки сделал и чему в итоге научился.</p>
+                            <a href="#" class="read-more-btn">Читать далее →</a>
+                        </div>
+                    </div>
+                    <div class="blog-card-modern fade-up delay-3">
+                        <img src="images/blog-post3.jpg" alt="Мои цели" class="blog-image">
+                        <div class="blog-content">
+                            <h3>Мои цели в IT-сфере</h3>
+                            <p>Взгляд в будущее. Рассказываю о том, какие технологии я хочу освоить, в каком направлении развиваться и каким вижу себя через несколько лет.</p>
+                            <a href="#" class="read-more-btn">Читать далее →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="fade-up">&copy; 2025 Богдан. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" class="scroll-to-top-btn">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Богдан</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="about.html" class="nav-link">Обо мне</a>
+            <a href="blog.html" class="nav-link">Блог</a>
+            <a href="contact.html" class="nav-link active">Контакты</a>
+            <a href="services.html" class="nav-link">Услуги</a>
+        </nav>
+        <button id="themeToggle" class="theme-toggle-btn">
+            <span class="theme-icon">🌙</span>
+        </button>
+    </header>
+
+    <main class="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title fade-up">Связаться со мной</h1>
+            </div>
+        </section>
+
+        <section class="contact-section-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info fade-up delay-1">
+                        <h3>Мои контакты</h3>
+                        <p>Я всегда рад новым знакомствам и интересным проектам. Свяжитесь со мной любым удобным способом.</p>
+                        <div class="social-links-modern">
+                            <a href="https://t.me/owr9bkkk" class="social-link" target="_blank">
+                                <img src="images/telegram.png" alt="Telegram">
+                                <span>Telegram</span>
+                            </a>
+                            <a href="https://github.com/SolidGhost321" class="social-link" target="_blank">
+                                <img src="images/github.png" alt="GitHub">
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="social-link" target="_blank">
+                                <img src="images/email.png" alt="Email">
+                                <span>deryagin100@gmail.com</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-form-container fade-up delay-2">
+                        <h3>Отправьте мне сообщение</h3>
+                        <form id="contactForm" class="contact-form" action="https://formspree.io/f/xyzdldew" method="POST">
+                            <div class="form-group">
+                                <label for="name">Ваше имя</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Ваше сообщение</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="fade-up">&copy; 2025 Богдан. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" class="scroll-to-top-btn">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>
